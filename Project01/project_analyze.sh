@@ -1,15 +1,7 @@
 #!/bin/bash
-<<<<<<< HEAD
-echo "What do you want to do?"
-select yn in "Count" "Exit"; do
-    case $yn in
-        Count ) echo "Count for CS1XA3: "; break;;
-        Exit ) exit;;
-    esac
-done
-=======
+
 countFileTypes(){
->>>>>>> project01
+
   #find number of html files
   numHtml=$(find ~/CS1XA3 -iname "*.html" -type f| wc -l)
   echo "HTML: $numHtml"
@@ -33,9 +25,7 @@ countFileTypes(){
   #find number of bash scripts
   numBash=$(find ~/CS1XA3 -iname "*.sh" -type f| wc -l)
   echo "Bash Scripts: $numBash"
-<<<<<<< HEAD
 
-=======
 }
  
 #function to put every line containing #TODO in a todo.log
@@ -84,4 +74,3 @@ select yn in "Count" "TODOlog" "CustomFeature" "Exit"; do
         Exit ) exit;;
     esac
 done
->>>>>>> project01

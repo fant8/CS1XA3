@@ -4,11 +4,10 @@ If the user enters 1, the rest of the script will run and output the number of f
 user enters 2, the script will terminate and exit. If the user does not enter of these two options, they'll
 be prompted again. 
 
-<<<<<<< HEAD
 File Type Count:
 For each type of file, the directory gets searched for files ending in the appropriate extention using find. 
 This gets piped into a variable and outputted with the corresponding message. 
-=======
+
 After adding the TODO Log and custom feature to the script in Part 2, the user now has the following options:
 1) Count
 2) TODOLog
