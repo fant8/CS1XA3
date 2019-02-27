@@ -29,3 +29,4 @@ Using two for loops and the find command (to distinguish the files in the direct
 each file in the directory. A variable is used to store the contents of the current file in each for loop. 
 If these contents are the same and the names of the files are not the same, one file gets deleted. 
 
+
