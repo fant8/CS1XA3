@@ -1,0 +1,176 @@
+[26/Mar/2019 03:36:50] "GET /e/fant8/ HTTP/1.1" 200 37
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 26, 2019 - 03:36:36
+Django version 2.1.7, using settings 'django_project.settings'
+Starting development server at http://localhost:10017/
+Quit the server with CONTROL-C.
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:52:50] "POST /e/fant8/lab7/ HTTP/1.1" 404 1990
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:53:27] "POST /e/fant8/lab7/ HTTP/1.1" 404 1990
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:53:32] "POST /e/fant8/lab7/ HTTP/1.1" 404 1990
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:53:57] "POST /e/fant8/lab7/ HTTP/1.1" 404 1990
+Internal Server Error: /e/fant8/
+Traceback (most recent call last):
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/fant8/CS1XA3/python_env/django_project/django_project/urls.py", line 23, in post_password
+    password - request.POST.get("Password")
+NameError: name 'password' is not defined
+[26/Mar/2019 04:54:37] "GET /e/fant8/ HTTP/1.1" 500 62417
+[26/Mar/2019 04:55:01] "GET /e/fant8 HTTP/1.1" 301 0
+Internal Server Error: /e/fant8/
+Traceback (most recent call last):
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/fant8/CS1XA3/python_env/django_project/django_project/urls.py", line 23, in post_password
+    password - request.POST.get("Password")
+NameError: name 'password' is not defined
+[26/Mar/2019 04:55:01] "GET /e/fant8/ HTTP/1.1" 500 62390
+Not Found: /e/fant8/lab7
+[26/Mar/2019 04:55:14] "GET /e/fant8/lab7 HTTP/1.1" 404 1986
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 26, 2019 - 03:44:48
+Django version 2.1.7, using settings 'django_project.settings'
+Starting development server at http://localhost:10017/
+Quit the server with CONTROL-C.
+Internal Server Error: /e/fant8/lab7
+Traceback (most recent call last):
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/fant8/CS1XA3/python_env/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/fant8/CS1XA3/python_env/django_project/django_project/urls.py", line 23, in post_password
+    password - request.POST.get("password")
+NameError: name 'password' is not defined
+[26/Mar/2019 04:56:52] "GET /e/fant8/lab7 HTTP/1.1" 500 62569
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:56:55] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/
+[26/Mar/2019 04:57:00] "GET /e/fant8/ HTTP/1.1" 404 1978
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 26, 2019 - 04:56:46
+Django version 2.1.7, using settings 'django_project.settings'
+Starting development server at http://localhost:10017/
+Quit the server with CONTROL-C.
+Not Found: /e/fant8/
+[26/Mar/2019 04:57:34] "GET /e/fant8/ HTTP/1.1" 404 1978
+[26/Mar/2019 04:57:43] "GET /e/fant8/lab7 HTTP/1.1" 200 13
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:57:51] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:57:54] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 26, 2019 - 04:57:31
+Django version 2.1.7, using settings 'django_project.settings'
+Starting development server at http://localhost:10017/
+Quit the server with CONTROL-C.
+Not Found: /e/fant8/
+[26/Mar/2019 04:59:31] "GET /e/fant8/ HTTP/1.1" 404 1978
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:33] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:36] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:43] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:44] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:44] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:44] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 04:59:44] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+[26/Mar/2019 04:59:50] "GET /e/fant8/lab7 HTTP/1.1" 200 13
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:02:12] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:04:57] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:04:57] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:04:57] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:05:57] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:00] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:05] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:08] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:08] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:08] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:06:12] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/
+[26/Mar/2019 05:06:13] "GET /e/fant8/ HTTP/1.1" 404 1978
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:08:55] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:08:55] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:08:56] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Not Found: /e/fant8/lab7/
+[26/Mar/2019 05:10:17] "POST /e/fant8/lab7/ HTTP/1.1" 404 1994
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 26, 2019 - 04:59:26
+Django version 2.1.7, using settings 'django_project.settings'
+Starting development server at http://localhost:10017/
+Quit the server with CONTROL-C.
+Not Found: /e/fant8/
+[26/Mar/2019 05:12:42] "GET /e/fant8/ HTTP/1.1" 404 1979
+[26/Mar/2019 05:13:06] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:08] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:16] "POST /e/fant8/lab7/ HTTP/1.1" 200 4
+[26/Mar/2019 05:13:30] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:32] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:32] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:32] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:41] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:41] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:41] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:41] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:13:55] "POST /e/fant8/lab7/ HTTP/1.1" 200 4
+[26/Mar/2019 05:13:55] "POST /e/fant8/lab7/ HTTP/1.1" 200 4
+[26/Mar/2019 05:16:17] "POST /e/fant8/lab7/ HTTP/1.1" 200 4
+[26/Mar/2019 05:20:50] "POST /e/fant8/lab7/ HTTP/1.1" 200 13
+[26/Mar/2019 05:21:08] "POST /e/fant8/lab7/ HTTP/1.1" 200 4

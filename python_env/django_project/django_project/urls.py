@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-root = "e/fant8/"
+from django.http import HttpResponse
+
+def post_password(request):
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    if username == "Jimmy" and password == "Hendrix":
+    	return HttpResponse("Cool")
+    else:
+    	return HttpResponse("Bad User Name")
+
 urlpatterns = [
-    path(root, include("testreq.urls")),
+    path('e/fant8/lab7/' , post_password) ,
 ]
