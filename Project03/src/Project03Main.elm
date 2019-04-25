@@ -14,7 +14,7 @@ import Json.Encode as JEncode
 import String
 
 main =
-  Browser.element { init = init, update = update, , subscriptions = \_ -> Sub.none, view = view }
+  Browser.element { init = init, update = update, subscriptions = \_ -> Sub.none, view = view }
 
 rootUrl =
     "http://localhost:8000"
@@ -60,8 +60,8 @@ type Screen = Graphs | Loggin | Survey
 
 -- init
 
-init : Model
-init =
+init : ()-> (Model,Cmd Msg)
+init _ =
   ({ age = []
   , year = []
   , program = []
@@ -75,11 +75,11 @@ init =
   , currentScreen = Loggin
   , name = ""
   , password = ""
-  , error ""}, Cmd.none)
+  , error = ""}, Cmd.none)
 
 -- update
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> (Model, Cmd Msg)
 update message model =
   case message of
 
@@ -105,12 +105,13 @@ update message model =
 
     -- change screen to graphs and clear current info
     ViewGraphs ->
-      ({model | currentScreen = Graphs, age = "", year = "", program = "", gpa = "", program = ""}, Cmd.none)
+      ({model | currentScreen = Graphs, currentAge = "", currentYear = "", currentProgram = "", currentGpa = "", currentSchool = ""}, Cmd.none)
 
     -- change screen to survey and clear current info
     ToSurvey ->
-      ({model | currentScreen = Survey, age = "", year = "", program = "", gpa = "", program = ""}, Cmd.none)
+      ({model | currentScreen = Survey, currentAge = "", currentYear = "", currentProgram = "", currentGpa = "", currentSchool = ""}, Cmd.none)
 
+    -- login messages
     NewName name ->
       ( { model | name = name }, Cmd.none )
 
@@ -143,6 +144,9 @@ view model =
 
       div []
         [ div []
+            [ h1 [] [Html.text "LOGIN"]
+            ]
+        , div []
             [ viewInput "text" "Name" model.name NewName
             , viewInput "password" "Password" model.password NewPassword
             ]
@@ -177,6 +181,9 @@ view model =
         ]
 
     Graphs ->
+      div [style "font-family" "Helvetica"]
+        [  h1  [ style "font-weight" "bold"]   [ Html.text "graph" ]
+        ]
 
 viewInput : String -> String -> String -> (String -> Msg) -> Html Msg
 viewInput t p v toMsg =
