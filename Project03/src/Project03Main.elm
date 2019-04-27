@@ -17,7 +17,7 @@ main =
   Browser.element { init = init, update = update, subscriptions = \_ -> Sub.none, view = view }
 
 rootUrl =
-    "http://localhost:8000"
+    "http://localhost:8001"
 
 
 -- model
