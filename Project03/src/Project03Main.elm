@@ -33,6 +33,7 @@ type alias Model = { age : List Int
                     , currentGpa : String
                     , currentSchool : String
                     , currentScreen: Screen
+                    , surveyError : List String
                     , name: String
                     , password: String
                     , error: String }
@@ -73,6 +74,7 @@ init _ =
   , currentGpa = ""
   , currentSchool = ""
   , currentScreen = Loggin
+  , surveyError = []
   , name = ""
   , password = ""
   , error = ""}, Cmd.none)
@@ -85,16 +87,31 @@ update message model =
 
     -- change current user information
     ChangeAge userAge ->
-      ({model | currentAge = userAge}, Cmd.none)
+      if Maybe.withDefault 0 (String.toInt(userAge)) > 0 then
+        ({model | currentAge = userAge}, Cmd.none)
+      else if Maybe.withDefault 0 (String.toInt(userAge)) == 0 then
+        ({model | surveyError = model.surveyError ++ ["Invalid Age"]}, Cmd.none)
+        -- TODO add error
+      else ({model | surveyError = model.surveyError ++ ["Invalid Age"] }, Cmd.none)
 
     ChangeYear userYear ->
-      ({model | currentYear = userYear}, Cmd.none)
+      if Maybe.withDefault 0 (String.toInt(userYear)) > 0 then
+        ({model | currentYear = userYear}, Cmd.none)
+      else if Maybe.withDefault 0 (String.toInt(userYear)) == 0 then
+        ({model | surveyError = model.surveyError ++ ["Invalid Year"]}, Cmd.none)
+        -- TODO add error
+      else ({model | surveyError = model.surveyError ++ ["Invalid Year"]}, Cmd.none)
 
     ChangeProgram userProgram ->
       ({model | currentProgram = userProgram }, Cmd.none)
 
     ChangeGPA userGpa ->
-      ({model | currentGpa = userGpa}, Cmd.none)
+      if Maybe.withDefault 0 (String.toFloat(userGpa)) > 0 then
+        ({model | currentGpa = userGpa}, Cmd.none)
+      else if Maybe.withDefault 0 (String.toFloat(userGpa)) == 0 then
+        (model, Cmd.none)
+        -- TODO add error
+      else (model, Cmd.none)
 
     ChangeSchool userSchool ->
       ({model | currentSchool = userSchool}, Cmd.none)
@@ -127,7 +144,7 @@ update message model =
           ( { model | error = "failed to login" }, Cmd.none )
 
         Ok _ ->
-            ( model, load (rootUrl ++ "static/userpage.html") )
+            ( {model | currentScreen = Survey}, load (rootUrl ++ "static/userpage.html") )
 
         Err error ->
             ( handleError model error, Cmd.none )
@@ -142,16 +159,23 @@ view model =
 
     Loggin ->
 
-      div []
+      div [style "text-align" "center"]
         [ div []
-            [ h1 [] [Html.text "LOGIN"]
+            [ h1 [] [Html.text "Student Information Visualizer"]
+            , p [] [Html.text "Login/Create Account"]
             ]
         , div []
-            [ viewInput "text" "Name" model.name NewName
+            [ p [] [Html.text "Username"]
+            , viewInput "text" "Name" model.name NewName
+            , br [] []
+            , br [] []
+            , p [] [Html.text "Password"]
             , viewInput "password" "Password" model.password NewPassword
             ]
         , div []
-            [ button [ Events.onClick LoginButton ] [ text "Login" ]
+            [ br [] []
+            , button [ Events.onClick LoginButton ] [ text "Login" ]
+            , button [] [text "Create Account"]
             ]
         ]
 
@@ -177,6 +201,8 @@ view model =
         , br [] []
         , br [] []
         , button [onClick Submit] [Html.text "Submit"]
+        , Html.text ( Debug.toString model.surveyError)
+        , br [] []
         , button [onClick ViewGraphs] [Html.text "Go to Visualizer!"]
         ]
 
