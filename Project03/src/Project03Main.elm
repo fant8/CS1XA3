@@ -16,10 +16,6 @@ import String
 main =
   Browser.element { init = init, update = update, subscriptions = \_ -> Sub.none, view = view }
 
-rootUrl =
-    "http://localhost:8001"
-
-
 -- model
 
 type alias Model = { age : List Int
@@ -136,7 +132,7 @@ update message model =
       ( { model | password = password }, Cmd.none )
 
     LoginButton ->
-      ( model, loginPost model )
+      ( {model | currentScreen = Survey}, Cmd.none )
 
     GotLoginResponse result ->
       case result of
@@ -144,10 +140,10 @@ update message model =
           ( { model | error = "failed to login" }, Cmd.none )
 
         Ok _ ->
-            ( {model | currentScreen = Survey}, load (rootUrl ++ "static/userpage.html") )
+            ( {model | currentScreen = Survey}, Cmd.none )
 
         Err error ->
-            ( handleError model error, Cmd.none )
+            ( model, Cmd.none )
 
 
 
@@ -157,6 +153,7 @@ view : Model -> Html Msg
 view model =
   case model.currentScreen of
 
+    -- loggin screen
     Loggin ->
 
       div [style "text-align" "center"]
@@ -175,10 +172,11 @@ view model =
         , div []
             [ br [] []
             , button [ Events.onClick LoginButton ] [ text "Login" ]
-            , button [] [text "Create Account"]
+            , button [ Events.onClick LoginButton] [text "Create Account"]
             ]
         ]
 
+    -- survey screen
     Survey ->
 
       div [style "font-family" "Helvetica"]
@@ -206,54 +204,12 @@ view model =
         , button [onClick ViewGraphs] [Html.text "Go to Visualizer!"]
         ]
 
+    -- graphs screen
     Graphs ->
       div [style "font-family" "Helvetica"]
-        [  h1  [ style "font-weight" "bold"]   [ Html.text "graph" ]
+        [  h1  [ style "font-weight" "bold"]   [ Html.text "graphs" ]
         ]
 
 viewInput : String -> String -> String -> (String -> Msg) -> Html Msg
 viewInput t p v toMsg =
     input [ type_ t, placeholder p, Events.onInput toMsg ] []
-
---encode password
-
-passwordEncoder : Model -> JEncode.Value
-passwordEncoder model =
-    JEncode.object
-        [ ( "username"
-          , JEncode.string model.name
-          )
-        , ( "password"
-          , JEncode.string model.password
-          )
-        ]
-
--- login post
-
-loginPost : Model -> Cmd Msg
-loginPost model =
-    Http.post
-        { url = rootUrl ++ "userauthapp/loginuser/"
-        , body = Http.jsonBody <| passwordEncoder model
-        , expect = Http.expectString GotLoginResponse
-        }
-
--- handle errors
-
-handleError : Model -> Http.Error -> Model
-handleError model error =
-    case error of
-        Http.BadUrl url ->
-            { model | error = "bad url: " ++ url }
-
-        Http.Timeout ->
-            { model | error = "timeout" }
-
-        Http.NetworkError ->
-            { model | error = "network error" }
-
-        Http.BadStatus i ->
-            { model | error = "bad status " ++ String.fromInt i }
-
-        Http.BadBody body ->
-            { model | error = "bad body " ++ body }
